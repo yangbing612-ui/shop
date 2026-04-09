@@ -10,7 +10,7 @@ const isSearchOpen = ref(false)
 
 const navLinks = [
   { path: '/', label: '首页' },
-  { path: '/search', label: '探索' },
+  { path: '/search', label: '总览' },
   { path: '/cart', label: '购物车' },
   { path: '/favorites', label: '收藏' },
   { path: '/about', label: '关于' }
@@ -49,8 +49,8 @@ onUnmounted(() => {
   <header class="header" :class="{ scrolled: isScrolled }">
     <div class="header-inner">
       <router-link to="/" class="logo">
-        <span class="logo-text">MokuPlas</span>
-        <span class="logo-subtitle">MOKU PLAS</span>
+        <span class="logo-text">槿橙</span>
+        <span class="logo-subtitle">JING CHENG</span>
       </router-link>
 
       <nav class="nav" :class="{ open: isMobileMenuOpen }">

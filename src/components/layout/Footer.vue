@@ -36,12 +36,13 @@ const socialLinks = [
         <div class="footer-grid">
           <div class="footer-brand">
             <router-link to="/" class="brand-logo">
-              <span class="logo-text">极简家居</span>
-              <span class="logo-subtitle">MINIMAL HOME</span>
+              <span class="logo-text">锦橙</span>
+              <span class="logo-subtitle">JING CHENG</span>
             </router-link>
             <p class="brand-description">
-              探索简约而精致的生活方式。<br />
-              我们精心挑选每一件产品，为您打造舒适、优雅的居住空间。
+              精工模塑，全球日用好物智造者。<br />
+              根植于"中国模具之乡""中国塑料日用品之都"——浙江台州黄岩，<br />
+              专注于收纳用品、日用百货、塑料结构件的研发、生产与全球批发供应。
             </p>
             <div class="social-links">
               <button v-for="social in socialLinks" :key="social.name" class="social-link" :aria-label="social.name">
@@ -61,7 +62,7 @@ const socialLinks = [
           </div>
 
           <div class="footer-links-group">
-            <h4 class="links-title">探索</h4>
+            <h4 class="links-title">总览</h4>
             <ul class="links-list">
               <li v-for="link in footerLinks.explore" :key="link.path">
                 <router-link :to="link.path" class="footer-link">{{ link.label }}</router-link>
@@ -94,7 +95,7 @@ const socialLinks = [
       <div class="container">
         <div class="footer-bottom-inner">
           <p class="copyright">
-            &copy; {{ currentYear }} 极简家居. 保留所有权利.
+            &copy; {{ currentYear }} 槿橙. 保留所有权利.
           </p>
           <div class="footer-bottom-links">
             <a href="#" class="bottom-link">隐私政策</a>

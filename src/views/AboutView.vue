@@ -2,39 +2,35 @@
 const values = [
   {
     icon: 'design',
-    title: '简约设计',
-    description: '去除多余装饰，保留最本质的功能与美感，让每一件产品都经得起时间的考验。'
+    title: '精工制造',
+    description: '依托黄岩数十年模塑产业集群优势，采用精密模具开发与注塑工艺，确保每一件产品都达到工业级品质标准。'
   },
   {
     icon: 'quality',
-    title: '品质至上',
-    description: '严格的品质控制，精选优质材料，确保每一件产品都达到最高标准。'
+    title: '品质管控',
+    description: '从原材料采购到成品出厂，全流程严格品控，每一件产品都经过多道检测工序，确保耐用性与实用性完美平衡。'
   },
   {
     icon: 'sustainable',
-    title: '可持续发展',
-    description: '采用环保材料与工艺，减少对环境的影响，为地球贡献一份力量。'
+    title: '产业优势',
+    description: '根植于"中国模具之乡""中国塑料日用品之都"，拥有完整的产业链配套，具备快速打样、批量生产能力。'
   },
   {
     icon: 'experience',
-    title: '用户体验',
-    description: '以用户需求为中心，创造舒适、实用的产品，让生活更加美好。'
+    title: '全球服务',
+    description: '专注于全球批发供应，产品适配不同市场需求，为全球客户提供高性价比、稳定可靠的一站式供应链解决方案。'
   }
 ]
 
 const timeline = [
-  { year: '2018', title: '品牌创立', description: '极简家居在北京成立，开始探索简约生活方式' },
-  { year: '2019', title: '产品线扩展', description: '推出首个家居系列，获得市场认可' },
-  { year: '2020', title: '线上平台', description: '正式上线电商平台，服务更多用户' },
-  { year: '2022', title: '全国布局', description: '物流网络覆盖全国，实现次日达' },
-  { year: '2024', title: '品牌升级', description: '全新视觉形象，开启新篇章' }
+  { year: '2008', title: '工厂成立', description: '在浙江台州黄岩成立，开始专注于塑料日用品的生产制造' },
+  { year: '2012', title: '产能扩张', description: '引进先进注塑设备，建立标准化生产线，日产能大幅提升' },
+  { year: '2015', title: '模具开发', description: '成立专业模具开发团队，实现从设计到量产的全流程自主可控' },
+  { year: '2018', title: '外贸出口', description: '产品开始出口海外市场，服务全球客户' },
+  { year: '2023', title: '产业升级', description: '全面数字化改造，智能仓储物流体系建成，服务效率大幅提升' }
 ]
 
-const team = [
-  { name: '张明', role: '创始人 & CEO', image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20man%20portrait%2C%20minimalist%20style%2C%20business&image_size=square' },
-  { name: '李婷', role: '设计总监', image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20woman%20portrait%2C%20minimalist%20style%2C%20business&image_size=square' },
-  { name: '王磊', role: '产品总监', image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20asian%20man%20portrait%2C%20minimalist%20style%2C%20creative&image_size=square' }
-]
+
 </script>
 
 <template>
@@ -42,12 +38,12 @@ const team = [
     <section class="hero-section">
       <div class="container">
         <div class="hero-content">
-          <span class="hero-tag">About Us</span>
-          <h1 class="hero-title">追求极致的<br />简约美学</h1>
+          <span class="hero-tag">ABOUT US</span>
+          <h1 class="hero-title">精工模塑<br />全球日用好物智造者</h1>
           <p class="hero-description">
-            我们相信，简约不等于简单。每一件产品都承载着设计师的心血，
-            每一处细节都经过反复推敲。我们致力于为追求品质生活的您，
-            提供最优质的家居产品。
+            根植于"中国模具之乡""中国塑料日用品之都"——浙江台州黄岩，
+            我们依托当地数十年积淀的模塑产业集群优势，专注于收纳用品、日用百货、
+            塑料结构件的研发、生产与全球批发供应。
           </p>
         </div>
       </div>
@@ -58,18 +54,19 @@ const team = [
         <div class="story-grid">
           <div class="story-content">
             <span class="section-tag">Our Story</span>
-            <h2 class="section-title">品牌故事</h2>
+            <h2 class="section-title">工厂简介</h2>
             <p class="story-text">
-              极简家居成立于2018年，源于创始人对简约生活方式的热爱与追求。
-              我们相信，在这个信息爆炸的时代，人们更需要一个能够让自己静下心来的空间。
+              我们是一家位于浙江台州黄岩的专业模塑制品制造商，依托当地"中国模具之乡"
+              "中国塑料日用品之都"的产业集群优势，专注于高品质塑料日用品的研发、生产与全球批发供应。
             </p>
             <p class="story-text">
-              我们的设计理念源于东方禅意与北欧极简的融合，追求"少即是多"的生活哲学。
-              每一件产品都经过严格筛选，确保其设计、品质与实用性达到完美平衡。
+              从模具设计开发到注塑成型，我们拥有完整的生产链条和严格的质量管控体系。
+              每一件产品都经过多道工序的精心打磨，确保在设计、耐用性与实用性之间达到完美平衡。
             </p>
             <p class="story-text">
-              六年来，我们始终坚持初心，为超过50万个家庭带来了简约而美好的生活体验。
-              未来，我们将继续探索，为您呈现更多优质产品。
+              十五年来，我们始终坚持"精工制造、品质为先"的理念，产品远销欧美、东南亚等多个国家和地区，
+              为全球客户提供了高性价比、稳定可靠的供应链解决方案。未来，我们将继续深耕模塑产业，
+              为合作伙伴创造更大价值。
             </p>
           </div>
           <div class="story-image">
@@ -83,7 +80,7 @@ const team = [
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Our Values</span>
-          <h2 class="section-title">品牌理念</h2>
+          <h2 class="section-title">核心优势</h2>
         </div>
         <div class="values-grid">
           <div v-for="value in values" :key="value.title" class="value-card">
@@ -116,7 +113,7 @@ const team = [
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Our Journey</span>
-          <h2 class="section-title">发展历程</h2>
+          <h2 class="section-title">工厂历程</h2>
         </div>
         <div class="timeline">
           <div v-for="(item, index) in timeline" :key="item.year" class="timeline-item" :style="{ '--delay': index }">
@@ -130,26 +127,6 @@ const team = [
       </div>
     </section>
 
-    <section class="team-section section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Our Team</span>
-          <h2 class="section-title">核心团队</h2>
-        </div>
-        <div class="team-grid">
-          <div v-for="member in team" :key="member.name" class="team-card">
-            <div class="team-image">
-              <img :src="member.image" :alt="member.name" loading="lazy" />
-            </div>
-            <div class="team-info">
-              <h4 class="team-name">{{ member.name }}</h4>
-              <span class="team-role">{{ member.role }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="contact-section">
       <div class="container">
         <div class="contact-grid">
@@ -157,8 +134,8 @@ const team = [
             <span class="section-tag">Contact Us</span>
             <h2 class="section-title">联系我们</h2>
             <p class="contact-text">
-              如果您有任何问题或建议，欢迎随时与我们联系。
-              我们将在24小时内回复您的消息。
+              如果您有定制需求、批发询价或其他合作意向，欢迎随时与我们联系。
+              我们将在24小时内回复您的消息，为您提供专业的解决方案。
             </p>
           </div>
           <div class="contact-info">
@@ -188,7 +165,7 @@ const team = [
               </svg>
               <div>
                 <span class="contact-label">地址</span>
-                <span class="contact-value">北京市朝阳区建国路88号</span>
+                <span class="contact-value">浙江省台州市黄岩区</span>
               </div>
             </div>
           </div>

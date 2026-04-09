@@ -2,7 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import products from '../data/products.json'
-import Alert from '../components/common/Alert.vue'
+import ContactModal from '../components/common/ContactModal.vue'
 
 interface CartItem {
   productId: number
@@ -14,18 +14,18 @@ const router = useRouter()
 const cartItems = ref<CartItem[]>([])
 
 // 弹窗相关变量
-const alertVisible = ref(false)
-const alertMessage = ref('')
+const modalVisible = ref(false)
+const modalMessage = ref('')
 
 // 显示弹窗
-const showAlert = (message: string) => {
-  alertMessage.value = message
-  alertVisible.value = true
+const showModal = (message: string) => {
+  modalMessage.value = message
+  modalVisible.value = true
 }
 
 // 关闭弹窗
-const closeAlert = () => {
-  alertVisible.value = false
+const closeModal = () => {
+  modalVisible.value = false
 }
 
 // 从cookie中加载购物车数据
@@ -98,7 +98,7 @@ const continueShopping = () => {
 
 // 结算（暂时不接入支付）
 const checkout = () => {
-  showAlert('结算功能暂未开放，敬请期待！')
+  showModal('如需批量采购或定制服务，请拨打下方电话咨询')
 }
 
 // 获取商品信息
@@ -196,10 +196,10 @@ onMounted(() => {
       </div>
       
       <!-- 弹窗组件 -->
-      <Alert 
-        :visible="alertVisible" 
-        :message="alertMessage"
-        @close="closeAlert"
+      <ContactModal 
+        :visible="modalVisible" 
+        :message="modalMessage"
+        @close="closeModal"
       />
     </div>
   </div>
