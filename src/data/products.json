@@ -5890,5 +5890,63 @@
       "/shop/20201111 便当盒/images/双层便当盒_14.jpg",
       "/shop/20201111 便当盒/images/双层便当盒_15.jpg"
     ]
+  },
+  {
+    "id": 149,
+    "modelId": "ALB-149",
+    "name": "严选肥皂盒创意沥水香皂盒卫生间浴室免打孔壁挂式肥皂架",
+    "description": "严选肥皂盒创意沥水香皂盒卫生间浴室免打孔壁挂式肥皂架，优质材料，耐用环保，设计合理，使用方便。",
+    "price": 25,
+    "sizes": [
+      {
+        "size": "款式1",
+        "price": 23,
+        "image": "/shop/肥皂盒-详情/sku/1.jpg"
+      },
+      {
+        "size": "款式2",
+        "price": 25,
+        "image": "/shop/肥皂盒-详情/sku/2.jpg"
+      }
+    ],
+    "images": [
+      "/shop/肥皂盒-详情/800/1.jpg",
+      "/shop/肥皂盒-详情/800/2.jpg",
+      "/shop/肥皂盒-详情/800/3.jpg",
+      "/shop/肥皂盒-详情/800/4.jpg",
+      "/shop/肥皂盒-详情/800/5.jpg",
+      "/shop/肥皂盒-详情/800/6.jpg",
+      "/shop/肥皂盒-详情/800/7.jpg",
+      "/shop/肥皂盒-详情/800/8.jpg",
+      "/shop/肥皂盒-详情/800/9.jpg",
+      "/shop/肥皂盒-详情/800/10.jpg"
+    ],
+    "category": "浴室收纳",
+    "rating": 4.5,
+    "sales": 0,
+    "info": {
+      "size": "标准",
+      "weight": "0.2kg",
+      "color": "多种颜色",
+      "material": "塑料",
+      "package": "单个装",
+      "origin": "中国",
+      "warranty": "1年"
+    },
+    "descriptionImages": [
+      "/shop/肥皂盒-详情/images/肥皂盒_01.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_02.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_03.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_04.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_05.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_06.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_07.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_08.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_09.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_10.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_11.jpg",
+      "/shop/肥皂盒-详情/images/肥皂盒_12.jpg"
+    ],
+    "video": "/shop/肥皂盒-详情/肥皂盒视频.mp4"
   }
 ]
