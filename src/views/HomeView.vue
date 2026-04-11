@@ -37,7 +37,7 @@ const categories = [
   { id: 4, name: '桌面收纳', nameEn: 'Desktop Storage', count: 8, image: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=desktop%20storage%20organizer%2C%20office%20supplies%2C%20minimalist%20design&image_size=landscape_16_9' }
 ]
 
-const hotProducts = ref(products.sort((a, b) => b.sales - a.sales).slice(0, 4))
+const hotProducts = ref(products.sort((a, b) => (b.sales || 0) - (a.sales || 0)).slice(0, 4))
 
 const stats = [
   { value: '50K+', label: '满意客户' },

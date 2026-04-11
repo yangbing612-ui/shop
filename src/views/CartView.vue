@@ -54,7 +54,7 @@ const saveCartToCookie = () => {
 const totalPrice = computed(() => {
   return cartItems.value.reduce((total, item) => {
     const product = products.find(p => p.id === item.productId)
-    const size = product?.sizes.find(s => s.size === item.size)
+    const size = product?.sizes?.find(s => s.size === item.size)
     const price = size?.price || product?.price || 0
     return total + price * item.quantity
   }, 0)
@@ -109,7 +109,7 @@ const getProductInfo = (productId: number) => {
 // 获取商品尺寸信息
 const getSizeInfo = (productId: number, size: string) => {
   const product = getProductInfo(productId)
-  return product?.sizes.find(s => s.size === size)
+  return product?.sizes?.find(s => s.size === size)
 }
 
 onMounted(() => {

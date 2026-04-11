@@ -57,7 +57,7 @@ const filteredProducts = computed(() => {
       result.sort((a, b) => b.rating - a.rating)
       break
     case 'sales':
-      result.sort((a, b) => b.sales - a.sales)
+      result.sort((a, b) => (b.sales || 0) - (a.sales || 0))
       break
   }
 

@@ -50,7 +50,7 @@ onUnmounted(() => {
     <div class="header-inner">
       <router-link to="/" class="logo">
         <span class="logo-text">槿橙</span>
-        <span class="logo-subtitle">JING CHENG</span>
+        <span class="logo-subtitle">JIN CHENG</span>
       </router-link>
 
       <nav class="nav" :class="{ open: isMobileMenuOpen }">

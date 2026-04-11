@@ -36,8 +36,8 @@ const socialLinks = [
         <div class="footer-grid">
           <div class="footer-brand">
             <router-link to="/" class="brand-logo">
-              <span class="logo-text">锦橙</span>
-              <span class="logo-subtitle">JING CHENG</span>
+              <span class="logo-text">槿橙</span>
+              <span class="logo-subtitle">JIN CHENG</span>
             </router-link>
             <p class="brand-description">
               精工模塑，全球日用好物智造者。<br />

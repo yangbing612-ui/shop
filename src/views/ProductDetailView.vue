@@ -21,7 +21,7 @@ const loadProduct = () => {
   const foundProduct = products.find(p => p.id === id)
   if (foundProduct) {
     product.value = foundProduct
-    selectedSize.value = foundProduct.sizes[0]
+    selectedSize.value = foundProduct.sizes?.[0]
     currentImageIndex.value = 0
     quantity.value = 1
   } else {
@@ -60,21 +60,28 @@ const zoomSkuImage = (image: string) => {
 
 // 加入购物车
 const addToCart = () => {
-  if (!product.value || !selectedSize.value) {
+  if (!product.value) {
+    showAlert('商品信息加载中，请稍候')
+    return
+  }
+
+  if (!product.value.sizes && !selectedSize.value) {
     showAlert('请选择商品尺寸')
     return
   }
-  
+
   try {
     // 从localStorage加载购物车数据
     const cartData = localStorage.getItem('cart')
     const cart = cartData ? JSON.parse(cartData) : []
-    
+
+    const size = selectedSize.value?.size || '默认'
+
     // 检查商品是否已经在购物车中
-    const existingItemIndex = cart.findIndex((item: any) => 
-      item.productId === product.value.id && item.size === selectedSize.value.size
+    const existingItemIndex = cart.findIndex((item: any) =>
+      item.productId === product.value.id && item.size === size
     )
-    
+
     if (existingItemIndex !== -1) {
       // 如果商品已经在购物车中，增加数量
       cart[existingItemIndex].quantity += quantity.value
@@ -82,14 +89,14 @@ const addToCart = () => {
       // 如果商品不在购物车中，添加新商品
       cart.push({
         productId: product.value.id,
-        size: selectedSize.value.size,
+        size: size,
         quantity: quantity.value
       })
     }
-    
+
     // 保存购物车数据到localStorage
     localStorage.setItem('cart', JSON.stringify(cart))
-    
+
     // 提示用户商品已添加到购物车
     showAlert('商品已添加到购物车')
   } catch (error) {
@@ -273,7 +280,7 @@ const relatedProducts = computed(() => {
               <h3 class="section-label">选择尺寸</h3>
               <div class="size-options">
                 <button
-                  v-for="size in product.sizes"
+                  v-for="size in (product.sizes || [])"
                   :key="size.size"
                   class="size-btn"
                   :class="{ active: selectedSize?.size === size.size }"
@@ -289,7 +296,7 @@ const relatedProducts = computed(() => {
                     </div>
                   </div>
                   <span class="size-name">{{ size.size }}</span>
-                  <span class="size-price">¥{{ size.price.toLocaleString() }}</span>
+                  <span class="size-price">¥{{ (size.price || 0).toLocaleString() }}</span>
                 </button>
               </div>
             </div>
@@ -360,31 +367,31 @@ const relatedProducts = computed(() => {
               <div class="info-table">
                 <div class="info-row">
                   <div class="info-label">尺寸</div>
-                  <div class="info-value">{{ product.info.size }}</div>
+                  <div class="info-value">{{ product.info?.size || '标准' }}</div>
                 </div>
                 <div class="info-row">
                   <div class="info-label">重量</div>
-                  <div class="info-value">{{ product.info.weight }}</div>
+                  <div class="info-value">{{ product.info?.weight || '-' }}</div>
                 </div>
                 <div class="info-row">
                   <div class="info-label">颜色</div>
-                  <div class="info-value">{{ product.info.color }}</div>
+                  <div class="info-value">{{ product.info?.color || '-' }}</div>
                 </div>
                 <div class="info-row">
                   <div class="info-label">材质</div>
-                  <div class="info-value">{{ product.info.material }}</div>
+                  <div class="info-value">{{ product.info?.material || '-' }}</div>
                 </div>
                 <div class="info-row">
                   <div class="info-label">包装</div>
-                  <div class="info-value">{{ product.info.package }}</div>
+                  <div class="info-value">{{ product.info?.package || '-' }}</div>
                 </div>
                 <div class="info-row">
                   <div class="info-label">产地</div>
-                  <div class="info-value">{{ product.info.origin }}</div>
+                  <div class="info-value">{{ product.info?.origin || '-' }}</div>
                 </div>
                 <div class="info-row">
                   <div class="info-label">保修期</div>
-                  <div class="info-value">{{ product.info.warranty }}</div>
+                  <div class="info-value">{{ product.info?.warranty || '-' }}</div>
                 </div>
               </div>
             </div>
@@ -423,8 +430,8 @@ const relatedProducts = computed(() => {
                 </div>
                 <div class="related-content">
                   <h4 class="related-name">{{ item.name }}</h4>
-                  <span class="related-sales">已售 {{ item.sales }} 件</span>
-                  <span class="related-price">¥{{ item.sizes[0].price.toLocaleString() }}</span>
+                  <span class="related-sales">已售 {{ item.sales || 0 }} 件</span>
+                  <span class="related-price">¥{{ (item.sizes?.[0]?.price || item.price || 0).toLocaleString() }}</span>
                 </div>
               </router-link>
             </article>
