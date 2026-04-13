@@ -199,9 +199,9 @@ onUnmounted(() => {
                 <span class="product-category">{{ product.category }}</span>
                 <h3 class="product-name">{{ product.name }}</h3>
                 <div class="product-footer">
-                  <span class="product-price">¥{{ product.price.toLocaleString() }}</span>
+                  <span class="product-price">{{ product.isUSD ? '$' : '¥' }}{{ product.price.toLocaleString() }}</span>
                   <div class="product-sales">
-                    已售 {{ product.sales }} 件
+                    已售 {{ product.sales || 0 }} 件
                   </div>
                   <div class="product-rating">
                     <svg v-for="i in 5" :key="i" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" :class="{ filled: i <= Math.floor(product.rating) }">

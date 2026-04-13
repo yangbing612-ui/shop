@@ -147,7 +147,7 @@ onMounted(() => {
             <div class="cart-item-info">
               <h3 class="cart-item-name">{{ getProductInfo(item.productId)?.name }}</h3>
               <p class="cart-item-size">尺寸：{{ item.size }}</p>
-              <p class="cart-item-price">¥{{ ((getSizeInfo(item.productId, item.size)?.price || getProductInfo(item.productId)?.price || 0)).toLocaleString() }}</p>
+              <p class="cart-item-price">{{ getProductInfo(item.productId)?.isUSD ? '$' : '¥' }}{{ ((getSizeInfo(item.productId, item.size)?.price || getProductInfo(item.productId)?.price || 0)).toLocaleString() }}</p>
             </div>
             <div class="cart-item-quantity">
               <button class="qty-btn" @click="decreaseQuantity(index)" :disabled="item.quantity <= 1">−</button>
@@ -161,7 +161,7 @@ onMounted(() => {
               <button class="qty-btn" @click="increaseQuantity(index)">+</button>
             </div>
             <div class="cart-item-total">
-              ¥{{ (((getSizeInfo(item.productId, item.size)?.price || getProductInfo(item.productId)?.price || 0) * item.quantity)).toLocaleString() }}
+              {{ getProductInfo(item.productId)?.isUSD ? '$' : '¥' }}{{ (((getSizeInfo(item.productId, item.size)?.price || getProductInfo(item.productId)?.price || 0) * item.quantity)).toLocaleString() }}
             </div>
             <div class="cart-item-actions">
               <button class="remove-btn" @click="removeItem(index)">
@@ -181,11 +181,11 @@ onMounted(() => {
           </div>
           <div class="summary-item">
             <span>商品总价</span>
-            <span>¥{{ totalPrice.toLocaleString() }}</span>
+            <span>{{ cartItems[0]?.productId ? (getProductInfo(cartItems[0]?.productId)?.isUSD ? '$' : '¥') : '¥' }}{{ totalPrice.toLocaleString() }}</span>
           </div>
           <div class="summary-item total">
             <span>总计</span>
-            <span>¥{{ totalPrice.toLocaleString() }}</span>
+            <span>{{ cartItems[0]?.productId ? (getProductInfo(cartItems[0]?.productId)?.isUSD ? '$' : '¥') : '¥' }}{{ totalPrice.toLocaleString() }}</span>
           </div>
           <div class="summary-actions">
             <button class="btn btn-secondary" @click="continueShopping">继续购物</button>

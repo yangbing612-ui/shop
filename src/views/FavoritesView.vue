@@ -84,8 +84,8 @@ onMounted(() => {
             <div class="favorite-content">
               <router-link :to="`/product/${productId}`" class="favorite-name">{{ getProductInfo(productId)?.name }}</router-link>
               <div class="favorite-meta">
-                <span class="favorite-price">¥{{ getProductInfo(productId)?.price.toLocaleString() }}</span>
-                <span class="favorite-sales">已售 {{ getProductInfo(productId)?.sales }} 件</span>
+                <span class="favorite-price">{{ getProductInfo(productId)?.isUSD ? '$' : '¥' }}{{ getProductInfo(productId)?.price.toLocaleString() }}</span>
+                <span class="favorite-sales">已售 {{ getProductInfo(productId)?.sales || 0 }} 件</span>
               </div>
             </div>
           </div>

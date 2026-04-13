@@ -15,6 +15,11 @@ const isSkuZoomed = ref(false)
 const currentSkuImage = ref('')
 const quantity = ref(1)
 
+const formatPrice = (price: number, isUSD?: boolean) => {
+  const symbol = isUSD ? '$' : '¥'
+  return `${symbol}${price.toLocaleString()}`
+}
+
 const loadProduct = () => {
   loading.value = true
   const id = parseInt(route.params.id as string)
@@ -273,7 +278,7 @@ const relatedProducts = computed(() => {
 
             <div class="product-price-section">
               <span class="price-label">价格</span>
-              <span class="price-value">¥{{ selectedSize?.price.toLocaleString() }}</span>
+              <span class="price-value">{{ formatPrice(selectedSize?.price || product.price, product.isUSD || selectedSize?.isUSD) }}</span>
             </div>
 
             <div class="size-section">
@@ -296,7 +301,7 @@ const relatedProducts = computed(() => {
                     </div>
                   </div>
                   <span class="size-name">{{ size.size }}</span>
-                  <span class="size-price">¥{{ (size.price || 0).toLocaleString() }}</span>
+                  <span class="size-price">{{ formatPrice(size.price || 0, size.isUSD || product.isUSD) }}</span>
                 </button>
               </div>
             </div>
@@ -431,7 +436,7 @@ const relatedProducts = computed(() => {
                 <div class="related-content">
                   <h4 class="related-name">{{ item.name }}</h4>
                   <span class="related-sales">已售 {{ item.sales || 0 }} 件</span>
-                  <span class="related-price">¥{{ (item.sizes?.[0]?.price || item.price || 0).toLocaleString() }}</span>
+                  <span class="related-price">{{ formatPrice(item.sizes?.[0]?.price || item.price || 0, item.isUSD || item.sizes?.[0]?.isUSD) }}</span>
                 </div>
               </router-link>
             </article>
